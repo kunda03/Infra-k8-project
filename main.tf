@@ -4,6 +4,8 @@
 
 resource "aws_vpc" "our-vpc" {   # "aws-vpc" is api which helps tocreate AWS VPC and "our-vpc" is code name
   cidr_block = var.vpc_cidr_value   # this is the cidr block which will specify the ip addresses
+  enable_dns_support   = true
+  enable_dns_hostnames = true
   tags = {  # it will tag the resource
     Name : "Our-VPC"   # this is the name of the VPC
     Environment : var.environment  # this is the environment in which we are launching the VPC
